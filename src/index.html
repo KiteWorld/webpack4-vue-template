@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>webpack 4 demo</title>
+</head>
+<div id="app"></div>
+<!-- 没有使用 dll 时需要删除 -->
+<!-- <script src="dll/vue.dll.js"></script> -->
+
+<!-- 配合 externals 一起使用，排除对应的依赖打包进bundle. 通过 cdn 下载对应的依赖。 -->
+<% if (htmlWebpackPlugin.options.env == "production") { %>
+	<script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.14/vue.runtime.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.5.2/vue-router.min.js"></script>
+  <% } %>
+
+</body>
+
+</html>
